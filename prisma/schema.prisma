@@ -10,3 +10,10 @@ datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL") //데이터베이스를 .env에서 url로 연결하겠다
 }
+
+model Todo {
+  id Int @default(autoincrement()) @id 
+  title String
+  content String?
+  is_done Boolean? @default(false)
+}
